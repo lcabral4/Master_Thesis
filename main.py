@@ -97,6 +97,7 @@ for i in range(N):
 #    t.append(f)
 #    w.append(f)
     mag = 20*log10(f)
+    S11 = 10**mag
 #    print(mag)
 #    [S11, S21, S12,S22]
 #    y = np.append(mag)
@@ -104,6 +105,12 @@ for i in range(N):
     plt.ylabel('Log Magnitude (dB')
     plt.plot(x, mag)
     plt.title(name_dict[i])
+    fig = plt.figure(11)
+    SER = -10* log10(1 - np.abs(S11)**2)
+    plt.plot(x, SER)
+    plt.xlabel('Frequency (Hz)')
+    plt.ylabel('SER (dB)')
+    plt.title('Shielding Due To Reflection')
 #print(f)
 for i in range(N):
     if i == 0:
@@ -193,14 +200,20 @@ for i in range(N):
     f = np.abs(y)
 #    f = sqrt(test)
     mag = 20*log10(f)
+    S12 = 10**mag
+    Total_SE = -10*log10(np.abs(S12)**2)
 #    print(mag)
 #    [S11, S21, S12,S22]
 #    y = np.append(mag)
-    plt.xlabel('Frequancy (Hz')
-    plt.ylabel('Log Magnitude (dB')
+    plt.xlabel('Frequancy (Hz)')
+    plt.ylabel('Log Magnitude (dB)')
     plt.plot(x, mag)
     plt.title(name_dict[i])
-
+    fig = plt.figure(9)
+    plt.plot(x, Total_SE)
+    plt.title('Total SE')
+    plt.xlabel('Frequency (Hz)')
+    plt.ylabel('Total SE (dB)')
 for i in range(N):
     if i == 0:
         continue
@@ -249,11 +262,115 @@ for i in range(N):
     plt.ylabel('Log Magnitude (dB')
     plt.plot(x, mag)
     plt.title(name_dict[i])
+#plt.show()
+
+
+        
+        
+'----------------------------------------------'
+for i in range(N):
+    if i == 1:
+        continue
+    if i == 2:
+        continue
+    if i ==3:
+        continue
+    if i == 5:
+        continue
+    if i == 6:
+        continue
+    if i == 7:
+        continue
+    if i == 9:
+        continue
+    if i == 10:
+        continue
+    if i == 11:
+        continue
+    if i == 13:
+        continue
+    if i == 14:
+        continue
+    if i == 15:
+        continue
+    if i == 17:
+        continue
+    if i == 18:
+        continue
+    if i == 19:
+        continue
+       
+#    fig = plt.figure(100)
+#    print(i, ':', keyslist[i])
+    y = datalist[i]             # data 
+#    print(y)
+    f = np.abs(y)
+#    f = sqrt(test)
+#    t.append(f)
+#    w.append(f)
+    mag = 20*log10(f)
+    S11 = 10**mag
+#    print(mag)
+#    [S11, S21, S12,S22]
+#    y = np.append(mag)
+    for j in range(N):
+        if j == 0:
+            continue
+        if j == 1:
+            continue
+        if j ==3:
+            continue
+        if j == 4:
+            continue
+        if j == 5:
+            continue
+        if j == 7:
+            continue
+        if j == 8:
+            continue
+        if j == 9:
+            continue
+        if j == 11:
+            continue
+        if j == 12:
+            continue
+        if j == 13:
+            continue
+        if j == 15:
+            continue
+        if j == 16:
+            continue
+        if j == 17:
+            continue
+        if j == 19:
+            continue
+        
+        
+        fig = plt.figure(900)
+    #    print(i, ':', keyslist[i])
+        y = datalist[j]             # data 
+    #    print(y)
+        f = np.abs(y)
+    #    f = sqrt(test)
+        mag = 20*log10(f)
+        S12 = 10**mag
+        SEA = -10 * log10(np.abs(S12)**2 / (1 - np.abs(S11)**2))
+    #    print(mag)
+    #    [S11, S21, S12,S22]
+    #    y = np.append(mag)
+        plt.title('SE Due To Absorption')
+        plt.xlabel('Frequancy (Hz)')
+        plt.ylabel('SEA (dB)')
+        plt.plot(x, SEA)
+#        plt.title(name_dict[i])
+        
+
 plt.show()
 
 
-        
-        
+
+
+
 
         
         
