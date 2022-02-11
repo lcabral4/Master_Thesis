@@ -122,7 +122,7 @@ for i in range(N):
     if i == 16:
         plt.plot(x, mag, label = 'Sample4')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-    plt.savefig('S11.png')
+    plt.savefig('S11.png', bbox_inches='tight')
         
     plt.title(name_dict[i])
     fig = plt.figure(11)
@@ -152,7 +152,7 @@ for i in range(N):
         plt.plot(x, SER, label = 'Sample5')
 #        plt.plot(x, SER_Tunnel, label = 'tunnel 4')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.savefig('SER.png')
+    plt.savefig('SER.png', bbox_inches='tight')
     
 for i in range(N):
     if i == 0:
@@ -212,7 +212,7 @@ for i in range(N):
     if i == 17:
         plt.plot(x, mag, label = 'Sample5')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.savefig('S21.png')
+    plt.savefig('S21.png', bbox_inches='tight')
         
 S2 = []    
 for i in range(N):
@@ -277,7 +277,7 @@ for i in range(N):
     if i == 18:
         plt.plot(x, mag, label = 'Sample5')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.savefig('S12.png')
+    plt.savefig('S12.png',  bbox_inches='tight')
     plt.title(name_dict[i])
     fig = plt.figure(9)
     plt.title('Total SE')
@@ -302,11 +302,11 @@ for i in range(N):
     if i == 14:
         plt.plot(x, sample, label = 'Sample4')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-    if i == 18:
+#    if i == 18:
 #        plt.plot(x, Total_SE, label = 'Sample4')
-        plt.plot(x, sample, label = 'Sample 5')
-        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.savefig('Total_SE.png')
+#        plt.plot(x, sample, label = 'Sample 5')
+#        plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
+    plt.savefig('Total_SE.png',  bbox_inches='tight')
 
 for i in range(N):
     if i == 0:
@@ -367,7 +367,7 @@ for i in range(N):
     if i == 19:
         plt.plot(x, mag, label = 'Sample 5')
         plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
-        plt.savefig('S22.png')
+    plt.savefig('S22.png', bbox_inches='tight')
 #plt.show()
 
 
@@ -457,7 +457,7 @@ plt.plot(x, sample5, label = 'Sample 5')
 plt.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 #print(S1, 'S11')
 #print(S2, 'S22')
-plt.savefig('SEA.png')
+plt.savefig('SEA.png', bbox_inches='tight')
 
 
 
